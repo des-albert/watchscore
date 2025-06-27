@@ -1,0 +1,30 @@
+package org.db.watchscore.theme
+
+import androidx.compose.ui.graphics.Color
+
+val primaryLight = Color(0xFF016B5D)
+val onPrimaryLight = Color(0xFFFFFFFF)
+val primaryContainerLight = Color(0xFF9FF2E0)
+val onPrimaryContainerLight = Color(0xFF005046)
+val secondaryLight = Color(0xFF4A635D)
+val onSecondaryLight = Color(0xFFFFFFFF)
+val secondaryContainerLight = Color(0xFFCDE8E1)
+val onSecondaryContainerLight = Color(0xFF334B46)
+val tertiaryLight = Color(0xFF446278)
+val onTertiaryLight = Color(0xFFFFFFFF)
+val tertiaryContainerLight = Color(0xFFCAE6FF)
+val onTertiaryContainerLight = Color(0xFF2C4A60)
+val errorLight = Color(0xFFBA1A1A)
+val onErrorLight = Color(0xFFFFFFFF)
+val errorContainerLight = Color(0xFF8CBCB9)
+val onErrorContainerLight = Color(0xFF93000A)
+val backgroundLight = Color(0xFFF5FBF7)
+val onBackgroundLight = Color(0xFF171D1B)
+val onSurfaceLight = Color(0xFF171D1B)
+val onSurfaceVariantLight = Color(0xFF3F4946)
+val outlineLight = Color(0xFF6F7976)
+val outlineVariantLight = Color(0xFFBEC9C5)
+val surfaceContainerLowLight = Color(0xFFEFF5F2)
+val surfaceContainerLight = Color(0xFFE9EFEC)
+val surfaceContainerHighLight = Color(0xFFE3EAE6)
+

@@ -11,7 +11,6 @@ composeMaterial3 = "1.5.0-beta04"
 material3Android = "1.4.0-alpha16"
 lifecycleViewmodelKtx = "2.9.1"
 lifecycleViewmodelCompose = "2.9.1"
-composeFoundationVersion = "1.5.0-beta04"
 androidxComposeFoundation = "1.5.0-beta04"
 
 [libraries]
@@ -23,7 +22,6 @@ ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-compose-foundation = { group = "androidx.wear.compose", name = "compose-foundation", version.ref = "composeFoundation" }
 wear-tooling-preview = { group = "androidx.wear", name = "wear-tooling-preview", version.ref = "wearToolingPreview" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplashscreen" }

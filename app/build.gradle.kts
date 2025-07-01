@@ -50,6 +50,7 @@ dependencies {
   implementation(libs.lifecycle.viewmodel.compose)
   implementation(libs.compose.material3)
   implementation(libs.material3.android)
+  implementation(libs.androidx.compose.foundation)
 
   androidTestImplementation(platform(libs.compose.bom))
   androidTestImplementation(libs.ui.test.junit4)

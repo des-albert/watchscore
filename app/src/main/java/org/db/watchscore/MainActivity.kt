@@ -12,7 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.ui.Modifier
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -55,6 +54,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.wear.compose.material3.Text
 import androidx.wear.compose.material3.TimeText
+import androidx.wear.compose.material3.TimeTextDefaults
+import androidx.wear.compose.material3.timeTextCurvedText
 import org.db.watchscore.theme.WatchScoreTheme
 import java.util.Locale
 
@@ -71,12 +72,10 @@ class MainActivity : ComponentActivity() {
   }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun WatchScore() {
   WatchScoreTheme {
     val pagerState = rememberPagerState(pageCount = { 2 })
-
 
     HorizontalPager(
       state = pagerState,
@@ -109,9 +108,12 @@ fun Score(
     "Steve" to R.drawable.steve
   )
 
+
   Surface(
     color = MaterialTheme.colorScheme.errorContainer,
   ) {
+
+
     Column(
       modifier = Modifier
         .fillMaxHeight()
@@ -119,25 +121,28 @@ fun Score(
       horizontalAlignment = Alignment.CenterHorizontally,
       verticalArrangement = Arrangement.Center
     ) {
-      Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically,
-      ) {
-        Box(
-          modifier = Modifier
-            .height(12.dp)
-            .width(40.dp)
-            .background(MaterialTheme.colorScheme.errorContainer),
-        )
-        {
-          TimeText(
-
-          )
-        }
-      }
 
       if (scoreVisible) {
+        Row(
+          modifier = Modifier.fillMaxWidth(),
+          horizontalArrangement = Arrangement.Center,
+          verticalAlignment = Alignment.CenterVertically,
+        ) {
+          Box(
+            modifier = Modifier
+              .height(12.dp)
+              .width(40.dp)
+              .background(MaterialTheme.colorScheme.errorContainer),
+          )
+          {
+            val timeStyle = TimeTextDefaults.timeTextStyle(
+              color = MaterialTheme.colorScheme.outline
+            )
+            TimeText(
+              content = { time -> timeTextCurvedText(time, style = timeStyle)}
+            )
+          }
+        }
 
         Row(
           modifier = Modifier.fillMaxWidth(),
@@ -166,7 +171,7 @@ fun Score(
                   )
                 }
               }
-              Spacer(modifier = Modifier.height(10.dp))
+              Spacer(modifier = Modifier.height(5.dp))
 
               ElevatedButton(
                 colors = ButtonDefaults.elevatedButtonColors(
@@ -224,6 +229,7 @@ fun Score(
           }
         }
 
+
       } else {
 
         // Score Input
@@ -246,7 +252,7 @@ fun Score(
               Image(
                 painter = painterResource(id = resourceId),
                 contentDescription = null,
-                modifier = Modifier.size(36.dp)
+                modifier = Modifier.size(32.dp)
               )
             }
           }
@@ -257,7 +263,7 @@ fun Score(
           )
         }
 
-        Spacer(modifier = Modifier.height(5.dp))
+        Spacer(modifier = Modifier.height(4.dp))
         Row(
           modifier = Modifier.fillMaxWidth(),
           horizontalArrangement = Arrangement.SpaceEvenly,
@@ -331,7 +337,7 @@ fun Score(
             )
           }
         }
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(4.dp))
         Row(
           modifier = Modifier.fillMaxWidth(),
           horizontalArrangement = Arrangement.SpaceEvenly,
@@ -348,7 +354,7 @@ fun Score(
             modifier = Modifier.padding(bottom = 2.dp)
           )
         }
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(4.dp))
         ElevatedButton(
           colors = ButtonDefaults.elevatedButtonColors(
             containerColor = MaterialTheme.colorScheme.onPrimaryContainer,
@@ -403,10 +409,13 @@ fun Score(
           },
           contentPadding = PaddingValues(0.dp),
           modifier = Modifier
-            .height(24.dp)
-            .width(60.dp)//
+            .height(18.dp)
+            .width(40.dp)
         ) {
-          Text("Save")
+          Text(
+            text = "Save",
+            fontSize = 14.sp
+          )
         }
       }
     }
@@ -470,11 +479,6 @@ fun Timer(
 
     }
   }
-}
-
-
-private fun updateScore() {
-
 }
 
 @Preview

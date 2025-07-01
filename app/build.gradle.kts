@@ -6,7 +6,7 @@ plugins {
 
 android {
   namespace = "org.db.watchscore"
-  compileSdk = 35
+  compileSdk = 36
 
   defaultConfig {
     applicationId = "org.db.watchscore"
@@ -42,7 +42,6 @@ dependencies {
   implementation(libs.ui)
   implementation(libs.ui.graphics)
   implementation(libs.ui.tooling.preview)
-  implementation(libs.compose.foundation)
   implementation(libs.wear.tooling.preview)
   implementation(libs.activity.compose)
   implementation(libs.core.splashscreen)
